@@ -1,0 +1,22 @@
+<h1>The gossip project</h1>
+<p>Welcome   <%= @a %>   in this application</p>
+<% n =1 %>
+<ol>this is all gossip:</ol>
+	<% @gossip.each do |p| %>
+		<% n = n+1 %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+  
+    <h5 class="card-title">Gossip <%= n%> :<%= p.title %>
+</h5>
+    <p class="card-text">Content:....</p>
+    <a href="#" class="card-link"><%= p.user.first_name %>
+</a>
+    <a href="#" class="card-link"><%= link_to "voir plus", "gossip_#{n}" %>
+		
+</a>
+  </div>
+</div>
+<% end %>
+		
+	
