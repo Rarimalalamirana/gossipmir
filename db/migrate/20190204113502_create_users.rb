@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :age
       t.string :email
       t.belongs_to :city,index: true
+      t.belongs_to :gossip,index: true
       t.timestamps
     end
   end

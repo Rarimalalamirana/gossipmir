@@ -1,0 +1,18 @@
+  <div class=container> <br>  <br>  <br>  <br>  <br>
+    <%= form_tag url_for(action: 'update'), method: "patch" do %>
+
+      <h3><%= label_tag 'Title' %></h3>
+      <%= text_field_tag 'title',@t %>
+      <br /> <br />
+
+      <h3><%= label_tag 'Content'%></h3>
+      <%= text_field_tag 'content', @c %>
+      <br /> <br />
+
+     
+      <%= submit_tag "Edit gossip" %>
+
+    <% end %>
+
+    <br />
+    <a href="/gossips/index">Back to list of gossip</a></div>

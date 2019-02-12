@@ -11,13 +11,18 @@
   user = User.new(first_name:Faker::GameOfThrones.character,last_name: Faker::Name.last_name, email: Faker::Internet.email, age:Faker::Number.between(20,50),description: Faker::HarryPotter.quote)
   user.city =city
   user.save
+   
   gossip =Gossip.create(title:Faker::HarryPotter.location,content:Faker::GameOfThrones.quote)
   gossip.user =user
-  gossip.save
+   gossip.save
+   random =User.first
+comment =Comment.create(gossip:gossip,user: random ,content:Faker::GameOfThrones.quote)
+ 
   tag = Tag.new(title:Faker::Friends.quote)
   tag.save
   tager =Tager.new
   tager.tag =tag
   tager.gossip =gossip
   tager.save
+   
 end

@@ -1,0 +1,13 @@
+<h1>Comments#edit</h1>
+<p>Find me in app/views/comments/edit.html.erb</p>
+   <br>  <br>  <br>  <br>  <br>
+    <%= form_tag url_for(action: 'update'), method: "patch" do %>
+
+      <h3><%= label_tag 'Content' %></h3>
+      <%= text_field_tag 'content' %>
+      <br /> <br />
+
+     
+      <%= submit_tag "Edit comments" %>
+
+    <% end %>

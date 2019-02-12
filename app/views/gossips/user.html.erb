@@ -1,0 +1,28 @@
+<br><br><br><br><br>
+<div class=container>
+<h2><ol class="list-group">User <%= @u %></h2>
+	<li  class="list-group-item list-group-item-action">  First_name:<span class="badge badge-dark badge-pill"><%= @user.first_name %><br></span>
+		</li>
+	   <li  class="list-group-item list-group-item-action">
+		Last_name:<span class="badge badge-dark badge-pill"><%= @user.last_name  %><br></span>
+			</li>
+       <li  class="list-group-item list-group-item-action">	
+		 Age:<span class="badge badge-dark badge-pill"><%= @user.age%>ans<br></span>
+		 </li>
+       <li  class="list-group-item list-group-item-action">
+        Description:<span class="badge badge-dark badge-pill"><%= @user.description%></span>
+         </li>
+          <li  class="list-group-item list-group-item-action">
+        Email:<span class="badge badge-dark badge-pill"><%= @user.email%></span>
+         </li>
+          <li  class="list-group-item list-group-item-action">
+        City:	<span class="badge badge-dark badge-pill">
+	 	<% c =@city.name %>
+	 	<% m =@city.id %>
+        <a href="#" class="card-link"><%= link_to "#{c}", "/gossips/city/#{m}" %>
+		
+</a></span>
+         </li>				
+	</ol>
+	</div>
+	

@@ -1,0 +1,18 @@
+<br><br><br><br><br>
+
+<div class=container>
+<h2><ol class="list-group">comment <%= @m  %></h2>
+	<li  class="list-group-item list-group-item-action"> Content:<span class="badge badge-dark badge-pill"><%= @comment.content %><br></span></li><br>
+		       <li  class="list-group-item list-group-item-action">
+        Author:	<span class="badge badge-dark badge-pill">
+	 	<%= @comment.user.last_name%>-
+	 	<%= @comment.user.first_name%>
+        </span>
+         </li>	<br><br>
+			
+	</ol>
+	 <a class="btn btn-primary" href="/gossips/<%= @comment.gossip.id %>/comments/<%= @m  %>/edit" role="button">Edit</a>
+<%= link_to "Delete","/gossips/#{@comment.gossip.id}/comments/#{@m}", method:"delete",class: "btn btn-primary", style: "display: inline"%>
+
+</div>
+
