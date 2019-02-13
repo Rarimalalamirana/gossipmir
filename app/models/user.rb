@@ -7,10 +7,6 @@ class User < ApplicationRecord
   has_many :gossips,through: :comments
   has_many :likes
   has_secure_password
-  after_create :welcome_send
-
-  def welcome_send
-    UserMailer.welcome(self).deliver_now
-  end
+  
 
 end

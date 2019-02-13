@@ -9,9 +9,9 @@ class HomeController < ApplicationController
  
    a = City.create(name:params[:city],zip_code:"0002030")
    #user =User.new(password:,first_name:,last_name:, email: , ,,city: a)
-    @user=User.new(last_name:params[:last_name],first_name:params[:first_name],email:params[:email],password: params[:password],password_confirmation:params[:password_confirmation],description:params[:description],age:params[:age],city: a)
+    @user=User.new(last_name:params[:last_name],first_name:params[:first_name],email:params[:email],password: params[:password],description:params[:description],age:params[:age],city: a)
 puts "$$$$$$$$$$$"
-puts params[:password]#user=User.new(last_name:"mirana",first_name:"laigo",email:"laing@example.com",password:"mirana",city_id:1)
+puts @user#user=User.new(last_name:"mirana",first_name:"laigo",email:"laing@example.com",password:"mirana",city_id:1)
     puts "$$$$$$$$$" 
       if @user.valid?
         @user.save
