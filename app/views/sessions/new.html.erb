@@ -18,7 +18,8 @@
   </div>
 </nav>
 <br><br><br> 
-<div class=container >
+<div class="container" >
+   <div class="jumbotron" id="jumbotron">
  <div class="form-group">
     <div class="form-group col-md-6">
       <% if flash[:danger]%>
@@ -28,18 +29,23 @@
 
  <%= form_tag url_for(action: 'create'), method: "post" do %>
 
+
       <h3><%= label_tag 'Email' %></h3>
-      <%= text_field_tag 'email' %>
+      <p class="prep"><%= text_field_tag 'email' %></p>
       <br /> <br />
+
 
       <h3><%= label_tag 'Password' %></h3>
       <%= password_field_tag 'password' %>
       <br /> <br />
 
      
-      <%= submit_tag "log in" %>
+      
+      <button type="submit" class="btn btn-primary btn-lg"> Log in</button>
+      </div>
 
     <% end %>
+      </div>
       </div>
   </div>
   </div>

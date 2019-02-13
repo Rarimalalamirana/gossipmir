@@ -1,39 +1,62 @@
 <br><br><br><br><br>
-<div class=container>
-<h2><ol class="list-group">gossip <%= @m  %></h2>
-	<li  class="list-group-item list-group-item-action"> Title:<span class="badge badge-dark badge-pill"><%= @gossip.title %><br></span></li><br>
-		       <li  class="list-group-item list-group-item-action">
-        Author:	<span class="badge badge-dark badge-pill">
-	 	<% c = @gossip.user.last_name%>
-	 	<% l = @gossip.user.first_name%>
-	 	<% w = @gossip.user.id%>
-        <a href="#" class="card-link"><%= link_to "#{c}-#{l}", "/gossips/user/#{w}" %>
-		
-</a></span>
-         </li>	<br>
-		     
-        <li  class="list-group-item list-group-item-action"> Content:<span class="badge badge-dark badge-pill"><%= @gossip.content%></span>
-        </li>
-         Comment:
-        <% @gossip.comments.each do |f|%>
-         <li  class="list-group-item list-group-item-action"><span class="badge badge-dark badge-pill"><%= f.content %> <a href="#" class="card-link"><%= link_to "voir plus","/gossips/#{@m}/comments/#{f.id}" %></span>
+<div class="fixed-top">
+	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-5 mt-xl-2">
+				<li class="nav-item">
+					<a class="navbar-brand" href="/gossips/index">Acceuil</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="navbar-brand" href="/gossips/new">New gossip</a>
+				</li>
+				<li class="nav-item">
+					<a class="navbar-brand" href="/sessions/<%= @id%>" data-method ="delete">Log out</a>
+				</li>
+				<li class="nav-item">        
+				</li>
+				
+			</ul>
+		</div>
+	</nav>
+	<div class=container>
+		<h2><ol class="list-group">gossip <%= @m  %></h2>
+			<li  class="list-group-item list-group-item-action"> Title:<span class="badge badge-dark badge-pill"><%= @gossip.title %><br></span></li><br>
+			<li  class="list-group-item list-group-item-action">
+				Author:	<span class="badge badge-dark badge-pill">
+					<% c = @gossip.user.last_name%>
+					<% l = @gossip.user.first_name%>
+					<% w = @gossip.user.id%>
+					<a href="#" class="card-link"><%= link_to "#{c}-#{l}", "/gossips/user/#{w}" %>
+						
+					</a></span>
+				</li>	<br>
+				
+				<li  class="list-group-item list-group-item-action"> Content:<span class="badge badge-dark badge-pill"><%= @gossip.content%></span>
+				</li>
+				Comment:
+				<% @gossip.comments.each do |f|%>
+				<li  class="list-group-item list-group-item-action"><span class="badge badge-dark badge-pill"><%= f.content %> <a href="#" class="card-link"><%= link_to "voir plus","/gossips/#{@m}/comments/#{f.id}" %></span>
 
 
-        <% end %>	
-        </li>
-			
-	</li><br>
-	  <li  class="list-group-item list-group-item-action">
-        City_author:	<span class="badge badge-dark badge-pill">
-	 	<% c =@gossip.user.city.name %>
-	 	<% id =@gossip.user.city.id%>
-        <a href="#" class="card-link"><%= link_to "#{c}", "/gossips/city/#{id}" %>
-		
-</a></span>
-         </li>		
-	</ol>
-	 <a class="btn btn-primary" href="/gossips/<%=@m%>/edit" role="button">Edit</a>
-	 <a class="btn btn-primary" href="/gossips/<%=@m%>/comments/new" role="button">Add comment</a>
-<%= link_to "Delete",@gossip , method: "delete",class: "btn btn-primary", style: "display: inline"%>
-</div>
+					<% end %>	
+				</li>
+				
+			</li><br>
+			<li  class="list-group-item list-group-item-action">
+				City_author:	<span class="badge badge-dark badge-pill">
+					<% c =@gossip.user.city.name %>
+					<% id =@gossip.user.city.id%>
+					<a href="#" class="card-link"><%= link_to "#{c}", "/gossips/city/#{id}" %>
+						
+					</a></span>
+				</li>		
+			</ol>
+			<a class="btn btn-primary" href="/gossips/<%=@m%>/edit" role="button">Edit</a>
+			<a class="btn btn-primary" href="/gossips/<%=@m%>/comments/new" role="button">Add comment</a>
+			<%= link_to "Delete",@gossip , method: "delete",class: "btn btn-primary", style: "display: inline"%>
+		</div>
 

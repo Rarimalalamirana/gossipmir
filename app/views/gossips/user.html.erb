@@ -1,4 +1,27 @@
 <br><br><br><br><br>
+ <div class="fixed-top">
+   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-5 mt-xl-2">
+      <li class="nav-item">
+        <a class="navbar-brand" href="/gossips/index">Acceuil</a>
+      </li>
+    
+       <li class="nav-item">
+        <a class="navbar-brand" href="/gossips/new">New gossip</a>
+      </li>
+       <li class="nav-item">
+        <a class="navbar-brand" href="/sessions/<%= @id%>" data-method ="delete">Log out</a>
+      </li>
+         <li class="nav-item">        
+      </li>
+     
+    </ul>
+  </div>
+</nav>
 <div class=container>
 <h2><ol class="list-group">User <%= @u %></h2>
 	<li  class="list-group-item list-group-item-action">  First_name:<span class="badge badge-dark badge-pill"><%= @user.first_name %><br></span>

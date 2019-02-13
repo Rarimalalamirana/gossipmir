@@ -1,22 +1,50 @@
 <br><br><br><br>
+<div class="fixed-top">
+ <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-5 mt-xl-2">
+      <li class="nav-item">
+        <a class="navbar-brand" href="/gossips/index">Acceuil</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="navbar-brand" href="/gossips/new">New gossip</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="/sessions/<%= @id%>" data-method ="delete">Log out</a>
+      </li>
+      <li class="nav-item">        
+      </li>
+      
+    </ul>
+  </div>
+</nav>
 <div class=container >
- <div class="form-group">
-    <div class="form-group col-md-6">
+  <div class="jumbotron">
+    <h1 class="display-3">New gossip</h1>
+    <div class="form-group">
+      <div class="form-group col-md-6">
 
- <%= form_tag url_for(action: 'create'), method: "post" do %>
+       <%= form_tag url_for(action: 'create'), method: "post" do %>
 
-      <h3><%= label_tag 'Title' %></h3>
-      <%= text_field_tag 'title' %>
-      <br /> <br />
+       <h3><%= label_tag 'Title' %></h3>
+       <%= text_field_tag 'title' %>
+       <br /> <br />
 
-      <h3><%= label_tag 'Content' %></h3>
-      <%= text_field_tag 'content' %>
-      <br /> <br />
+       <h3><%= label_tag 'Content' %></h3>
+       <%= text_field_tag 'content' %>
+       <br /> <br />
 
-     
-      <%= submit_tag "Create gossip" %>
+       
+       <%= submit_tag "Create gossip" %>
 
-    <% end %>
-      </div>
-  </div>
-  </div>
+       <% end %>
+     </div>
+   </div>
+   
+ </div>
+ 
+</div>

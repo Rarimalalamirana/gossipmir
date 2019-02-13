@@ -1,7 +1,7 @@
 <br><br><br><br><br>
 
- <div class="fixed-top">
-   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+<div class="fixed-top">
+ <nav class="navbar navbar-expand-lg navbar-light bg-primary">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,48 +10,48 @@
       <li class="nav-item">
         <a class="navbar-brand" href="/gossips/index">Acceuil</a>
       </li>
-    
-       <li class="nav-item">
+
+      <li class="nav-item">
         <a class="navbar-brand" href="/gossips/new">New gossip</a>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="navbar-brand" href="/sessions/<%= @id%>" data-method ="delete">Log out</a>
       </li>
-         <li class="nav-item">        
+      <li class="nav-item">        
       </li>
-     
+
     </ul>
   </div>
 </nav>
 </div>
 <div class=container>
-<div class="jumbotron">
-  <h1>$$$  The gossip project  $$$</h1>
-  <h2 class="display-4">Welcome   <%= @nom %>   in this application</h2>
-  <p class="lead">This is a simple application </p>
-  <hr class="my-4">
-  <div class=container-row>
- <% n =0 %>
-<h3><ol>this is all gossip:</ol></h3>
-  <% @gossip.each do |p| %>
-    <% n = n+1 %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-  
-    <h5 class="card-title">Gossip <%=p.id %> :<%= p.title %>
-</h5>
-    <p class="card-text">Content:....</p>
-    <% u =p.user.first_name %>
-     <% r =p.user.id %>
-    <a href="#" class="card-link"><%= link_to "#{u}", "/gossips/user/#{r}" %>
-</a><br>
-    <a href="#" class="card-link"><%= link_to "voir plus", "/gossips/#{p.id}" %>
+  <div class="jumbotron">
+    <h1>$$$  The gossip project  $$$</h1>
+    <h2 class="display-4">Welcome   <%= @nom %>   in this application</h2>
+    <p class="lead">This is a simple application </p>
+    <hr class="my-4">
+    <h3><ol>this is all gossip:</ol></h3>
+    <div class="row">
 
-    
-</a>
+      <% @gossip.each do |p| %>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Gossip <%=p.id %> :<%= p.title %>
+            </h5>
+            <hr>
+            <% u =p.user.first_name %>
+            <% r =p.user.id %>
+            <a href="#" class="card-link"><%= link_to "#{u}", "/gossips/user/#{r}" %>
+            </a><br>
+            <a href="#" class="card-link"><%= link_to "voir plus", "/gossips/#{p.id}" %>
+            </a>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+
+    </div>
   </div>
-</div>
-<% end %>
-    
-  </div>
-</div>
+
